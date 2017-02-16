@@ -1,0 +1,18 @@
+version: '2.0'
+services:
+  alerta-web:
+    image: alerta/alerta-web
+    container_name: alerta-web
+    ports:
+      - 8181:80
+    depends_on:
+      - alerta-db
+    environment:
+      - MONGO_URI=mongodb://alerta-db:27017/monitoring
+    restart: always
+  alerta-db:
+    image: mongo
+    container_name: mongo
+    volumes:
+      - ./mongodb:/data/db
+    restart: always
