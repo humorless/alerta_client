@@ -9,6 +9,9 @@ services:
       - alerta-db
     environment:
       - MONGO_URI=mongodb://alerta-db:27017/monitoring
+    volumes:
+      - $PWD/config/alertad.conf.example:/etc/alertad.conf
+      - $PWD/config/config.js.example:/app/config.js
     restart: always
   alerta-db:
     image: mongo
