@@ -1,6 +1,6 @@
 DEBUG = True
 SECRET = "f1ef432b-b8eb-4c5f-a24b-47f74da5efdb"
-AUTH_REQUIRED = False
+AUTH_REQUIRED = True
 MONGO_URI = 'mongodb://db:27017/monitoring'
 
 PLUGINS = []
