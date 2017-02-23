@@ -14,7 +14,7 @@ services:
       - $PWD/config/config.js.example:/app/config.js
     restart: always
   alerta-db:
-    image: mongo
+    image: www.owlemon.com/mongo:2017.02.08
     container_name: mongo
     volumes:
       - ./mongodb:/data/db
