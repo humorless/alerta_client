@@ -4,7 +4,7 @@ services:
     image: www.owlemon.com/alerta-web:2017.02.08
     container_name: alerta-web
     ports:
-      - 8181:80
+      - 8081:80
     depends_on:
       - alerta-db
     environment:
@@ -17,5 +17,13 @@ services:
     image: www.owlemon.com/mongo:2017.02.08
     container_name: mongo
     volumes:
-      - ./mongodb:/data/db
+      - /data/mongo:/data/db
     restart: always
+
+  backup-db:
+    command: bash -c 'mongodump --out /backup --host mongo'
+    #command: bash -c 'mongorestore --out /backup --host mongo'
+    image: www.owlemon.com/mongo:2017.02.08
+    container_name: mongo_backup
+    volumes:
+      - /data/backup:/backup
