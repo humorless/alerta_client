@@ -1,0 +1,14 @@
+version: '2.0'
+services:
+  restore-db-admin:
+    command: bash -c 'mongorestore --drop --host mongo -d admin /backup/admin'
+    image: www.owlemon.com/mongo:2017.02.08
+    container_name: mongo_restore_db_admin
+    volumes:
+      - /data/restore:/backup
+  restore-db-monitoring:
+    command: bash -c 'mongorestore --drop --host mongo -d monitoring /backup/monitoring'
+    image: www.owlemon.com/mongo:2017.02.08
+    container_name: mongo_retore_db_monitoring
+    volumes:
+      - /data/restore:/backup

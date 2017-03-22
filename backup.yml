@@ -1,0 +1,8 @@
+version: '2.0'
+services:
+  backup-db:
+    command: bash -c 'mongodump --out /backup --host mongo'
+    image: www.owlemon.com/mongo:2017.02.08
+    container_name: mongo_backup
+    volumes:
+      - /data/backup:/backup
