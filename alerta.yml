@@ -4,7 +4,7 @@ services:
     image: www.owlemon.com:444/alerta-web:2017.02.08
     container_name: alerta-web
     ports:
-      - 8081:80
+      - 7000:80
     depends_on:
       - alerta-db
     environment:
