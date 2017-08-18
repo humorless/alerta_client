@@ -5,4 +5,4 @@ services:
     image: www.owlemon.com/mongo:2017.02.08
     container_name: mongo_backup
     volumes:
-      - /data/backup:/backup
+      - /ssd/backup:/backup

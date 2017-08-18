@@ -1,7 +1,7 @@
 version: '2.0'
 services:
   alerta-web:
-    image: www.owlemon.com/alerta-web:2017.02.08
+    image: www.owlemon.com:444/alerta-web:2017.02.08
     container_name: alerta-web
     ports:
       - 8081:80
@@ -14,8 +14,8 @@ services:
       - $PWD/config/config.js.example:/app/config.js
     restart: always
   alerta-db:
-    image: www.owlemon.com/mongo:2017.02.08
+    image: www.owlemon.com:444/mongo:2017.02.08
     container_name: mongo
     volumes:
-      - /data/mongo:/data/db
+      - /ssd/mongo:/data/db
     restart: always
