@@ -7,6 +7,8 @@ docker-compose -f alerta.yml up -d
 
 
 ## Setup Backup cronjob and upload to ftp.
+0. mkdir -p /ssd/backup_file
+
 1. Fill in the id/pw in backup_mongo.sh
  
 2. Install the backup cronjob
